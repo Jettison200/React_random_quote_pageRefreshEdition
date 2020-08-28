@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import Advice from './Components/Advice';
 
-function App() {
-  const axios = require("axios");
+class App extends Component {
 
-  const [advice, setAdvice] = useState("");
-  const [author, setAuthor] = useState("");
+  state = {
+    advice: "",
+    author: ""
+  };
 
-  let num;
+  componentWillMount(){
+    this.getAdvice();
+  }
 
-  let f = ()=> {
+  randomNumberHandler = ()=> {
     let figure = Math.floor(Math.random() * (217 - 1 + 1)) + 1; 
-    num = figure;
-    console.log()
+    return figure;
     };
-    f();
 
-  function getAdvice() {
-
-
-    
-    axios
+   getAdvice = ()=> {
+  
+    Axios
       .get("https://type.fit/api/quotes")
       .then((response) => {
-        let advice = response.data[num].text;
-        let author = response.data[num].author;
+        let advice = response.data[this.randomNumberHandler()].text;
+        let author = response.data[this.randomNumberHandler()].author;
         if (author === null) {
           author = "Anonymous";
         }
-        setAdvice(`"${advice}"`);
-        setAuthor(author);
+        console.log(advice)
+        this.setState({advice, author});
+       // setAuthor(author);
        // console.log(response.data[num]);
       })
       .catch((error) => {
@@ -40,17 +40,14 @@ function App() {
 
 
 
-  useEffect(()=>{
-    getAdvice();
-  },[])
-
-
+render(){
+const {advice,author} = this.state;
   return (
     <div>
-  
-      <Advice advice={advice} author={author} onClick={f()}></Advice>
+      <Advice  advice={advice} author={author} Click={this.getAdvice}></Advice>
     </div>
   );
+}
 }
 
 export default App;

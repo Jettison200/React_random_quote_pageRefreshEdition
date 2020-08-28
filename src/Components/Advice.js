@@ -8,7 +8,7 @@ function Advice(props){
             <div className="advice-card">
             <h2>{props.advice}</h2>
             <p>- {props.author}</p>
-            {/*<Button click={props.Click}/>*/}
+        <Button click={props.Click}/>
             </div>
     
             {props.children}
