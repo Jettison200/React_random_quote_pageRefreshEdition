@@ -1,0 +1,21 @@
+.button{
+    background-color: white;
+    color: #cd9cf2;
+    padding: 10px 20px;
+    outline:  none;
+    border: 1px solid #cd9cf2;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .4s all ease-in-out;
+    outline-offset: -5px;
+    outline:1px solid transparent;
+    border-radius: 3px;
+
+    &:hover{
+      color: white;
+      background-color: #cd9cf2;
+      outline: 1px solid #fff;
+   
+    }
+}
+

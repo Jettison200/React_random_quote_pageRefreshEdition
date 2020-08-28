@@ -1,0 +1,55 @@
+//* linear-gradient(to right, rgb(255, 251, 213), rgb(178, 10, 44))
+
+*{
+    //background-color: linear-gradient(to right, rgb(255, 251, 213), rgb(178, 10, 44));
+  
+   padding: 0;
+   margin: 0;
+   
+   
+}
+
+.advice-container{
+    height: 100vh;
+    background-color: #f8ceec;
+      background-image: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1{
+          font-size: 50px;
+          margin-bottom: 40px;
+          font-family: 'Alata', sans-serif;
+          text-align: center;
+          color: whitesmoke;
+          -webkit-text-stroke-width: .01px;
+          -webkit-text-stroke-color: #cd9cf2;
+      }
+}
+
+.advice-card{
+    background-color: white;
+width: 600px;
+height: auto;
+padding: 40px;
+margin: 0 20px;
+text-align: center;
+border: .5px solid #cd9cf2ab;
+border-radius: 10px;
+background: rgba(255, 255, 255, 0.74);
+box-shadow:   28px 28px 48px #cd9cf2, 
+             -28px -28px 48px rgba(246, 243, 255, 0.69);
+
+h2{
+    font-size: 30px;
+
+font-family: 'Charm', cursive;
+}
+p{
+    font-size: 20px;
+    margin-top: 18px;
+    font-family: 'Charm', cursive;
+}
+}
